@@ -1,0 +1,151 @@
+callback-url.phpArray
+(
+    [oauth_consumer_key] => 9p6fso87bjgpwejxxkfw21d5u7q9jb02
+    [oauth_consumer_secret] => 0veqlupijoxwl559xrf2wx9ldh59rtvk
+    [store_base_url] => http://localhost/magento2-dev/
+    [oauth_verifier] => kkv96i9mggfilkm76t676vj5ubcbhcsk
+)
+Array
+(
+)
+identity-link-url.phpArray
+(
+)
+Array
+(
+    [consumer_id] => 2
+    [success_call_back] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/4395bae5f68e52b5913852b089080a3f4df86c7d08458beea62c06a811fb5c47/
+)
+check-login.phpArray
+(
+    [username] => harishankar.malviya@perficient.com
+    [password] => 123456
+    [submit] => Login
+)
+Array
+(
+    [consumer_id] => 2
+    [callback_url] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/4395bae5f68e52b5913852b089080a3f4df86c7d08458beea62c06a811fb5c47/
+)
+callback-url.phpArray
+(
+    [oauth_consumer_key] => 9p6fso87bjgpwejxxkfw21d5u7q9jb02
+    [oauth_consumer_secret] => 0veqlupijoxwl559xrf2wx9ldh59rtvk
+    [store_base_url] => http://localhost/magento2-dev/
+    [oauth_verifier] => kkv96i9mggfilkm76t676vj5ubcbhcsk
+)
+Array
+(
+)
+identity-link-url.phpArray
+(
+)
+Array
+(
+    [consumer_id] => 2
+    [success_call_back] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/d7a4954a1ec3b72c05c829c1cc5e165d7bc93b5c7dd59d44a543321a21966877/
+)
+check-login.phpArray
+(
+    [username] => ashish.madankar@perficient.com
+    [password] => 123456
+    [submit] => Login
+)
+Array
+(
+    [consumer_id] => 2
+    [callback_url] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/d7a4954a1ec3b72c05c829c1cc5e165d7bc93b5c7dd59d44a543321a21966877/
+)
+callback-url.phpArray
+(
+    [oauth_consumer_key] => 9p6fso87bjgpwejxxkfw21d5u7q9jb02
+    [oauth_consumer_secret] => 0veqlupijoxwl559xrf2wx9ldh59rtvk
+    [store_base_url] => http://localhost/magento2-dev/
+    [oauth_verifier] => kkv96i9mggfilkm76t676vj5ubcbhcsk
+)
+Array
+(
+)
+identity-link-url.phpArray
+(
+)
+Array
+(
+    [consumer_id] => 2
+    [success_call_back] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/d7a4954a1ec3b72c05c829c1cc5e165d7bc93b5c7dd59d44a543321a21966877/
+)
+check-login.phpArray
+(
+    [username] => ashish.madankar@perficient.com
+    [password] => 123456
+    [submit] => Login
+)
+Array
+(
+    [consumer_id] => 2
+    [callback_url] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/d7a4954a1ec3b72c05c829c1cc5e165d7bc93b5c7dd59d44a543321a21966877/
+)
+callback-url.phpArray
+(
+    [oauth_consumer_key] => 9p6fso87bjgpwejxxkfw21d5u7q9jb02
+    [oauth_consumer_secret] => 0veqlupijoxwl559xrf2wx9ldh59rtvk
+    [store_base_url] => http://localhost/magento2-dev/
+    [oauth_verifier] => v541aqxab6g13fqmegkdupwsb6h40pmn
+)
+Array
+(
+)
+identity-link-url.phpArray
+(
+)
+Array
+(
+    [consumer_id] => 2
+    [success_call_back] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/d7a4954a1ec3b72c05c829c1cc5e165d7bc93b5c7dd59d44a543321a21966877/
+)
+check-login.phpArray
+(
+    [username] => ashish.madankar@perficient.com
+    [password] => 123456
+    [submit] => Login
+)
+Array
+(
+    [consumer_id] => 2
+    [callback_url] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/d7a4954a1ec3b72c05c829c1cc5e165d7bc93b5c7dd59d44a543321a21966877/
+)
+identity-link-url.phpArray
+(
+)
+Array
+(
+)
+callback-url.phpArray
+(
+    [oauth_consumer_key] => 9p6fso87bjgpwejxxkfw21d5u7q9jb02
+    [oauth_consumer_secret] => 0veqlupijoxwl559xrf2wx9ldh59rtvk
+    [store_base_url] => http://localhost/magento2-dev/
+    [oauth_verifier] => x1ycvnmfpwnhg7t2avnfyue5qll0u3ex
+)
+Array
+(
+)
+identity-link-url.phpArray
+(
+)
+Array
+(
+    [consumer_id] => 2
+    [success_call_back] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/d7a4954a1ec3b72c05c829c1cc5e165d7bc93b5c7dd59d44a543321a21966877/
+)
+check-login.phpArray
+(
+    [username] => admin
+    [password] => mag3nt0
+    [submit] => Login
+)
+Array
+(
+    [consumer_id] => 2
+    [callback_url] => http://localhost/magento2-dev/zpanel/admin/integration/loginSuccessCallback/key/d7a4954a1ec3b72c05c829c1cc5e165d7bc93b5c7dd59d44a543321a21966877/
+)

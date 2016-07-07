@@ -6,7 +6,7 @@ file_put_contents(
     FILE_APPEND
 );
 
-require '../../vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $consumer = $_REQUEST['consumer_id'];
 $callback = $_REQUEST['callback_url'];
