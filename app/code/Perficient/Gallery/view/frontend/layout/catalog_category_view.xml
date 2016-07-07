@@ -10,11 +10,11 @@
     <body>
         <referenceContainer name="content">
             <block before="-"
-                   template="gallery.phtml"
+                   template="Perficient_Gallery::gallery.phtml"
                    class="Perficient\Gallery\Block\Gallery"
                    name="perficient_gallery_blck.gallery"/>
         </referenceContainer>
-        <move element="perficient_gallery_blck.gallery" destination="right"/>
+        <!--<move element="perficient_gallery_blck.gallery" destination="right"/>-->
         <!--<move element="catalog.leftnav" destination="header.panel"/>-->
         <!--<move element="catalog.leftnav" destination="catalog.compare.list" before="-"/>-->
     </body>

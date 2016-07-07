@@ -17,13 +17,16 @@ class Gallery extends Template
 {
     protected $_resultGalleryFactory;
     protected $_resultImageFactory;
+    protected $_catalogSession;
 
     public function __construct(
         Template\Context $context,
         GalleryFactory $galleryFactory,
         ImagesFactory $imagesFactory,
+        \Magento\Catalog\Model\Session $catelogSession,
         array $data)
     {
+        $this->_catalogSession=$catelogSession;
         $this->_resultGalleryFactory = $galleryFactory;
         $this->_resultImageFactory = $imagesFactory;
         parent::__construct($context, $data);
@@ -31,9 +34,13 @@ class Gallery extends Template
 
     public function getGalleryData($catId = null)
     {
+        error_reporting(E_ALL);
+        ini_set('display_errors',1);
 
-
-        $catId = 4;
+        $category = $this->_registry->registry('current_category');
+        var_dump($category);
+        echo "In side function"; exit;
+        //$catId = 4;
         $gallries = $this->getGallery($catId);
 
         $data = array();
