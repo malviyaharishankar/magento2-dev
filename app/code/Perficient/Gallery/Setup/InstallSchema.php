@@ -104,6 +104,24 @@ class InstallSchema implements InstallSchemaInterface
 
 
         /**
+         * Create Trigger 'Designation Table to manage created_at and updated_at field'
+         */
+        $insertGallery =
+            <<<EOD
+            CREATE TRIGGER `perficient_gallery_insert` 
+                BEFORE INSERT ON `perficient_gallery` FOR EACH ROW 
+                SET NEW.created_at =NOW();
+EOD;
+        $updateGallery = <<<EOD
+            CREATE TRIGGER `perficient_gallery_update`
+                BEFORE UPDATE ON `perficient_gallery` FOR EACH ROW 
+                SET NEW.updated_at =NOW();
+EOD;
+        $installer->run($insertGallery);
+        $installer->run($updateGallery);
+
+
+        /**
          * Create table 'Gallery'
          */
         $table = $installer->getConnection()->newTable(
@@ -143,6 +161,7 @@ class InstallSchema implements InstallSchemaInterface
                 'perficient_gallery_images'
             );
         $installer->getConnection()->createTable($table);
+
         $installer->endSetup();
 
     }

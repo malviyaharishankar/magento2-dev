@@ -17,30 +17,25 @@ class Gallery extends Template
 {
     protected $_resultGalleryFactory;
     protected $_resultImageFactory;
-    protected $_catalogSession;
 
     public function __construct(
         Template\Context $context,
         GalleryFactory $galleryFactory,
         ImagesFactory $imagesFactory,
-        \Magento\Catalog\Model\Session $catelogSession,
         array $data)
     {
-        $this->_catalogSession=$catelogSession;
         $this->_resultGalleryFactory = $galleryFactory;
         $this->_resultImageFactory = $imagesFactory;
         parent::__construct($context, $data);
+        // echo "IN side constructr";exit;
     }
 
-    public function getGalleryData($catId = null)
+    public function getGalleryData()
     {
-        error_reporting(E_ALL);
-        ini_set('display_errors',1);
-
-        $category = $this->_registry->registry('current_category');
-        var_dump($category);
-        echo "In side function"; exit;
-        //$catId = 4;
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $category = $objectManager->get('Magento\Framework\Registry')
+            ->registry('current_category');//get current category
+        $catId = $category->getId();
         $gallries = $this->getGallery($catId);
 
         $data = array();
@@ -48,6 +43,7 @@ class Gallery extends Template
             $data['title'] = $gallery['gallery_code'];
             $data['images'] = $this->getImages($gallery['image_ids'])->getData();
         }
+
         return $data;
     }
 
@@ -57,8 +53,8 @@ class Gallery extends Template
         $gallery = $this->_resultGalleryFactory->create()
             ->getCollection()
             ->addFieldToFilter('status', 1)
-            ->addFieldToFilter('category_ids', array('in' => $catId));
-
+            ->addFieldToFilter('category_ids', array('finset' => $catId));
+        // echo "dfaf".$gallery->getSelect()->__toString(); exit;
         return $gallery;
     }
 

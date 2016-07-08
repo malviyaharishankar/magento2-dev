@@ -10,7 +10,7 @@
     <body>
         <referenceContainer name="content">
             <block before="-"
-                   template="Perficient_Gallery::gallery.phtml"
+                   template="gallery.phtml"
                    class="Perficient\Gallery\Block\Gallery"
                    name="perficient_gallery_blck.gallery"/>
         </referenceContainer>
