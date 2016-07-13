@@ -6,7 +6,7 @@ return array (
   ),
   'crypt' => 
   array (
-    'key' => '293b540b08673e059b87cff378708478',
+    'key' => '3ded30a7933d2f9eb8b38e1bba20cb33',
   ),
   'session' => 
   array (
@@ -20,7 +20,7 @@ return array (
       'default' => 
       array (
         'host' => 'localhost',
-        'dbname' => 'magento2',
+        'dbname' => 'db_magento2',
         'username' => 'root',
         'password' => '',
         'active' => '1',
@@ -45,14 +45,15 @@ return array (
     'reflection' => 1,
     'db_ddl' => 1,
     'eav' => 1,
+    'customer_notification' => 1,
+    'full_page' => 1,
     'config_integration' => 1,
     'config_integration_api' => 1,
-    'full_page' => 1,
     'translate' => 1,
     'config_webservice' => 1,
   ),
   'install' => 
   array (
-    'date' => 'Wed, 29 Jun 2016 11:32:13 +0000',
+    'date' => 'Wed, 13 Jul 2016 10:59:57 +0000',
   ),
 );
