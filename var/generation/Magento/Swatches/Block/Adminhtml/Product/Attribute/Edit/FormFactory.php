@@ -2,8 +2,7 @@
 namespace Magento\Swatches\Block\Adminhtml\Product\Attribute\Edit;
 
 /**
- * Factory class for @see
- * \Magento\Swatches\Block\Adminhtml\Product\Attribute\Edit\Form
+ * Factory class for @see \Magento\Swatches\Block\Adminhtml\Product\Attribute\Edit\Form
  */
 class FormFactory
 {

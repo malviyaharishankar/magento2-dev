@@ -6,6 +6,76 @@
  */
 
 var config = {
+    "waitSeconds": 0,
+    "map": {
+        "*": {
+            "ko": "knockoutjs/knockout",
+            "knockout": "knockoutjs/knockout",
+            "mageUtils": "mage/utils/main",
+            "rjsResolver": "mage/requirejs/resolver"
+        }
+    },
+    "shim": {
+        "jquery/jquery-migrate": ["jquery"],
+        "jquery/jquery.hashchange": ["jquery", "jquery/jquery-migrate"],
+        "jquery/jstree/jquery.hotkeys": ["jquery"],
+        "jquery/hover-intent": ["jquery"],
+        "mage/adminhtml/backup": ["prototype"],
+        "mage/captcha": ["prototype"],
+        "mage/common": ["jquery"],
+        "mage/new-gallery": ["jquery"],
+        "mage/webapi": ["jquery"],
+        "jquery/ui": ["jquery"],
+        "MutationObserver": ["es6-collections"],
+        "tinymce": {
+            "exports": "tinymce"
+        },
+        "moment": {
+            "exports": "moment"
+        },
+        "matchMedia": {
+            "exports": "mediaCheck"
+        },
+        "jquery/jquery-storageapi": {
+            "deps": ["jquery/jquery.cookie"]
+        }
+    },
+    "paths": {
+        "jquery/validate": "jquery/jquery.validate",
+        "jquery/hover-intent": "jquery/jquery.hoverIntent",
+        "jquery/file-uploader": "jquery/fileUploader/jquery.fileupload-fp",
+        "jquery/jquery.hashchange": "jquery/jquery.ba-hashchange.min",
+        "prototype": "legacy-build.min",
+        "jquery/jquery-storageapi": "jquery/jquery.storageapi.min",
+        "text": "mage/requirejs/text",
+        "domReady": "requirejs/domReady",
+        "tinymce": "tiny_mce/tiny_mce_src"
+    },
+    "deps": [
+        "jquery/jquery-migrate"
+    ],
+    "config": {
+        "mixins": {
+            "jquery/jstree/jquery.jstree": {
+                "mage/backend/jstree-mixin": true
+            }
+        }
+    }
+};
+
+require(['jquery'], function ($) {
+    $.noConflict();
+});
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
     map: {
         "*": {
             "rowBuilder":             "Magento_Theme/js/row-builder",
@@ -54,73 +124,13 @@ require.config(config);
  */
 
 var config = {
-    "waitSeconds": 0,
-    "map": {
-        "*": {
-            "mageUtils": "mage/utils/main",
-            "ko": "knockoutjs/knockout",
-            "knockout": "knockoutjs/knockout"
-        }
-    },
-    "shim": {
-        "jquery/jquery-migrate": ["jquery"],
-        "jquery/jquery.hashchange": ["jquery", "jquery/jquery-migrate"],
-        "jquery/jstree/jquery.hotkeys": ["jquery"],
-        "jquery/hover-intent": ["jquery"],
-        "mage/adminhtml/backup": ["prototype"],
-        "mage/captcha": ["prototype"],
-        "mage/common": ["jquery"],
-        "mage/new-gallery": ["jquery"],
-        "mage/webapi": ["jquery"],
-        "jquery/ui": ["jquery"],
-        "MutationObserver": ["es6-collections"],
-        "tinymce": {
-            "exports": "tinymce"
-        },
-        "moment": {
-            "exports": "moment"
-        },
-        "matchMedia": {
-            "exports": "mediaCheck"
-        },
-        "jquery/jquery-storageapi": {
-            "deps": ["jquery/jquery.cookie"]
-        }
-    },
-    "paths": {
-        "jquery/validate": "jquery/jquery.validate",
-        "jquery/hover-intent": "jquery/jquery.hoverIntent",
-        "jquery/file-uploader": "jquery/fileUploader/jquery.fileupload-fp",
-        "jquery/jquery.hashchange": "jquery/jquery.ba-hashchange.min",
-        "prototype": "legacy-build.min",
-        "jquery/jquery-storageapi": "jquery/jquery.storageapi.min",
-        "text": "mage/requirejs/text",
-        "domReady": "requirejs/domReady",
-        "tinymce": "tiny_mce/tiny_mce_src"
-    },
-    "deps": [
-        "jquery/jquery-migrate"
-    ]
-};
-
-require(['jquery'], function ($) {
-    $.noConflict();
-});
-
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
     map: {
         '*': {
             checkoutBalance:    'Magento_Customer/js/checkout-balance',
             address:            'Magento_Customer/address',
-            setPassword:        'Magento_Customer/set-password'
+            changeEmailPassword: 'Magento_Customer/change-email-password',
+            passwordStrengthIndicator: 'Magento_Customer/js/password-strength-indicator',
+            zxcvbn: 'Magento_Customer/js/zxcvbn'
         }
     }
 };
@@ -214,6 +224,9 @@ var config = {
         mixins: {
             'Magento_Checkout/js/action/place-order': {
                 'Magento_CheckoutAgreements/js/model/place-order-mixin': true
+            },
+            'Magento_Checkout/js/action/set-payment-information': {
+                'Magento_CheckoutAgreements/js/model/set-payment-information-mixin': true
             }
         }
     }
@@ -260,8 +273,7 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            requireCookie: 'Magento_Cookie/js/require-cookie',
-            cookieNotices: 'Magento_Cookie/js/notices'
+            catalogSearch: 'Magento_CatalogSearch/form-mini'
         }
     }
 };
@@ -276,7 +288,8 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            catalogSearch: 'Magento_CatalogSearch/form-mini'
+            requireCookie: 'Magento_Cookie/js/require-cookie',
+            cookieNotices: 'Magento_Cookie/js/notices'
         }
     }
 };
@@ -331,10 +344,7 @@ var config = {
             checkoutData:           'Magento_Checkout/js/checkout-data',
             proceedToCheckout:      'Magento_Checkout/js/proceed-to-checkout'
         }
-    },
-    deps: [
-        "Magento_Checkout/js/checkout-loader"
-    ]
+    }
 };
 
 require.config(config);
@@ -346,14 +356,19 @@ require.config(config);
  */
 
 var config = {
+    paths: {
+        'ui/template': 'Magento_Ui/templates'
+    },
     map: {
         '*': {
-            braintree:                  'https://js.braintreegateway.com/v2/braintree.js',
-            braintreeDataJs:            'Magento_Braintree/js/cc-data',
-            braintreeForm:              'Magento_Braintree/js/cc-form',
-            braintreeEditForm:          'Magento_Braintree/js/cc-edit-form',
-            braintreePayPalMinicart:    'Magento_Braintree/js/button/braintree-paypal-minicart',
-            transparent:                'Magento_Payment/transparent'
+            uiElement:      'Magento_Ui/js/lib/core/element/element',
+            uiCollection:   'Magento_Ui/js/lib/core/collection',
+            uiComponent:    'Magento_Ui/js/lib/core/collection',
+            uiClass:        'Magento_Ui/js/lib/core/class',
+            uiEvents:       'Magento_Ui/js/lib/core/events',
+            uiRegistry:     'Magento_Ui/js/lib/registry/registry',
+            uiLayout:       'Magento_Ui/js/core/renderer/layout',
+            buttonAdapter:  'Magento_Ui/js/form/button-adapter'
         }
     }
 };
@@ -416,11 +431,12 @@ require.config(config);
 
 var config = {
     map: {
-        '*': {
-            captcha: 'Magento_Captcha/captcha'
+        "*": {
+            "taxToggle": "Magento_Weee/tax-toggle"
         }
     }
 };
+
 require.config(config);
 })();
 (function() {
@@ -435,8 +451,17 @@ var config = {
             orderReview:            'Magento_Paypal/order-review',
             paypalCheckout:         'Magento_Paypal/js/paypal-checkout'
         }
+    },
+    paths: {
+        paypalInContextExpressCheckout: 'https://www.paypalobjects.com/api/checkout'
+    },
+    shim: {
+        paypalInContextExpressCheckout: {
+            exports: 'paypal'
+        }
     }
 };
+
 require.config(config);
 })();
 (function() {
@@ -459,11 +484,12 @@ require.config(config);
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-
+/*eslint no-unused-vars: 0*/
 var config = {
     map: {
-        "*": {
-            "taxToggle": "Magento_Weee/tax-toggle"
+        '*': {
+            loadPlayer: 'Magento_ProductVideo/js/load-player',
+            fotoramaVideoEvents: 'Magento_ProductVideo/js/fotorama-add-video-events'
         }
     }
 };
@@ -475,16 +501,14 @@ require.config(config);
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-/*eslint no-unused-vars: 0*/
+
 var config = {
     map: {
         '*': {
-            loadPlayer: 'Magento_ProductVideo/js/load-player',
-            fotoramaVideoEvents: 'Magento_ProductVideo/js/fotorama-add-video-events'
+            captcha: 'Magento_Captcha/captcha'
         }
     }
 };
-
 require.config(config);
 })();
 (function() {
@@ -525,46 +549,6 @@ require.config(config);
  */
 
 var config = {
-    paths: {
-        'ui/template': 'Magento_Ui/templates'
-    },
-    map: {
-        '*': {
-            uiElement:      'Magento_Ui/js/lib/core/element/element',
-            uiCollection:   'Magento_Ui/js/lib/core/collection',
-            uiComponent:    'Magento_Ui/js/lib/core/collection',
-            uiClass:        'Magento_Ui/js/lib/core/class',
-            uiEvents:       'Magento_Ui/js/lib/core/events',
-            uiRegistry:     'Magento_Ui/js/lib/registry/registry',
-            uiLayout:       'Magento_Ui/js/core/renderer/layout'
-        }
-    }
-};
-
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
-    map: {
-        '*': {
-            swatchRenderer: 'Magento_Swatches/js/SwatchRenderer'
-        }
-    }
-};
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
     map: {
         '*': {
             editTrigger:   'mage/edit-trigger',
@@ -574,6 +558,22 @@ var config = {
     deps: [
         'mage/translate-inline'
     ]
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
+    map: {
+        '*': {
+            braintree: 'https://js.braintreegateway.com/js/braintree-2.17.6.min.js'
+        }
+    }
 };
 
 require.config(config);

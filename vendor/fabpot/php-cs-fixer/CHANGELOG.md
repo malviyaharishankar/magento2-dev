@@ -3,6 +3,24 @@ CHANGELOG for PHP CS Fixer
 
 This file contains changelogs for stable releases only.
 
+Changelog for v1.11.4
+---------------------
+
+* bug #1956 SelfUpdateCommand - don't update to non-stable version (keradus)
+* bug #1963 Fix not wanted unneeded_control_parentheses fixer for clone (Soullivaneuh)
+* bug #1960 Fix invalid test cases (keradus)
+* bug #1939 BracesFixer - fix handling comment around control token (keradus)
+* minor #1927 NewWithBracesFixer - remove invalid testcase (keradus)
+
+Changelog for v1.11.3
+---------------------
+
+* bug #1868 NewWithBracesFixer - fix handling more neighbor tokens (keradus)
+* bug #1893 BracesFixer - handle comments inside lambda function prototype (keradus)
+* bug #1806 SelfAccessorFixer - skip anonymous classes (gharlan)
+* bug #1813 BlanklineAfterOpenTagFixer, NoBlankLinesBeforeNamespaceFixer - fix priority (SpacePossum)
+* minor #1807 Tokens - simplify isLambda() (gharlan)
+
 Changelog for v1.11.2
 ---------------------
 

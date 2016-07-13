@@ -53,7 +53,7 @@ class Proxy extends \Magento\MediaStorage\Model\File\Storage\File implements \Ma
      */
     public function __sleep()
     {
-        return array('_subject', '_isShared');
+        return ['_subject', '_isShared', '_instanceName'];
     }
 
     /**

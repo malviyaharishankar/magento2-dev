@@ -53,7 +53,7 @@ class Proxy implements \Magento\Framework\Translate\Inline\ParserInterface, \Mag
      */
     public function __sleep()
     {
-        return array('_subject', '_isShared');
+        return ['_subject', '_isShared', '_instanceName'];
     }
 
     /**
