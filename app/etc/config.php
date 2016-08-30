@@ -2,6 +2,7 @@
 return array (
   'modules' => 
   array (
+    'Foggyline_Slider' => 1,
     'Magento_Store' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
     'Magento_Directory' => 1,
@@ -123,5 +124,21 @@ return array (
     'Magento_WidgetSampleData' => 1,
     'Magento_Wishlist' => 1,
     'Magento_WishlistSampleData' => 1,
+    'Packt_ProductSlider' => 1,
+    'Perficient_Blog' => 1,
+    'Perficient_Calculator' => 1,
+    'Perficient_Catalog' => 1,
+    'Perficient_Core' => 1,
+    'Perficient_CronExample' => 1,
+    'Perficient_Customer' => 1,
+    'Perficient_Elogger' => 1,
+    'Perficient_Featuredproduct' => 1,
+    'Perficient_Feedback' => 1,
+    'Perficient_Gallery' => 1,
+    'Perficient_Helloworld' => 1,
+    'Perficient_Obevent' => 1,
+    'Perficient_Office' => 1,
+    'Perficient_Overriding' => 1,
+    'Perficient_RequestQuote' => 1,
   ),
 );
